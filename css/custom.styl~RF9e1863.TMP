@@ -1,0 +1,216 @@
+//general
+boxWidth = 280px
+
+// colors
+mainColor = #08c
+darkGrey = #323232
+grey = #808080
+lightGrey = #f5f5f5
+almostWhite = #f8f8f8
+
+// font
+family1 = 'PT Sans', sans-serif
+family2 = 'Arial', sans-serif
+family3 = 'Open Sans', sans-serif
+bigFont = 16px
+regularFont = 14px
+smallFont = 11px
+
+//icons
+sprite = '../img/img-icon.png'
+icoReply = -17px -20px
+icoReplyHover = 0 -20px
+icoRetweet = -20px -33px
+icoRetweetHover = 0 -33px
+icoFavourite = -14px -44px
+icoFavouriteHover = 0 -44px
+icoTriangle = 0 -58px
+
+*
+	box-sizing -moz-border-box
+	box-sizing -webkit-border-box
+	box-sizing border-box
+
+body
+	background almostWhite url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQALXLl/7zwjjgzhaulqMYAEYB8RmROaABAD/ew+Dsak1RQAAAABJRU5ErkJggg==")
+	color darkGrey
+	font regularFont family1
+	line-height 18px
+	margin 0
+	padding 60px 0 !important
+
+a
+	color mainColor
+	text-decoration none
+	transition all 0.3s ease
+	&:hover
+		color darkGrey
+		text-decoration none
+.row
+	*zoom 1
+	&:before,&:after
+		display table
+		content ""
+		line-height 0
+	&:after
+		clear both
+.container 
+	width 1180px
+	margin 0 auto
+	*zoom 1
+	&:before,&:after
+		display table
+		content ""
+		line-height 0
+	&:after
+		clear both
+.tweet
+	-moz-box-shadow 0 0 10px rgba(0,0,0,.05)
+	-webkit-box-shadow 0 0 10px rgba(0, 0, 0, .05)
+	background #fff
+	border 1px solid #DFDFDF
+	box-shadow 0 0 10px rgba(0, 0, 0, .05)
+	float left
+	font-size regularFont
+	line-height 20px
+	margin-left 20px
+	width boxWidth
+	&:first-child
+		margin-left 0
+
+	
+	.stream-item-header
+		background lightGrey
+		position relative
+		.avatar
+			float left
+			width 60px
+			height 60px
+			margin-right 10px
+		.triangle
+			background url(sprite) icoTriangle
+			width 21px
+			height 10px
+			position absolute
+			bottom -5px
+			left 20px
+		.fullname
+			float left
+			font-size bigFont
+			padding-top 10px
+		.username
+			color darkGrey
+			display block
+			float left
+			font-size regularFont
+
+		.time
+			color grey
+			float right
+			font-size regularFont
+			padding 10px
+			
+
+	.tweet-text
+		
+		font-family family1
+		font-size regularFont
+		margin 15px
+
+	.embed
+		color grey
+		font-size smallFont
+		line-height 14px
+		a
+			font-size 26px
+			text-decoration none
+			&:hover
+				color #808080
+		.description
+			font-family family2
+			margin 10px 15px 15px
+
+		.provider
+			display inline
+			font-weight bold
+		.thumbcontainer
+			background #C4C5C1 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQALXLl/7zwjjgzhaulqMYAEYB8RmROaABAD/ew+Dsak1RQAAAABJRU5ErkJggg==")
+			img
+				display block
+				margin 0 auto
+				overflow hidden
+				max-width 278px
+		.highlight
+			border-top 1px solid #e4e4e4
+			display none
+			margin 15px
+			padding-top 10px
+
+		.thumb
+			display block
+			margin 0 auto
+			overflow hidden
+	.stream-item-footer
+		background lightGrey
+		position relative
+		.tweet-actions
+			margin 5px 0
+			a
+				color grey
+				display inline-block
+				font-size smallFont
+				text-align center
+				width 33%
+				&.reply
+					span
+						background url(sprite) icoReply no-repeat
+						display inline-block
+						height 12px
+						margin-right 5px
+						width 17px
+					&:hover
+						background url(sprite) icoReplyHover no-repeat
+						display inline-block
+						width 17px
+						height 12px
+
+
+
+
+.transitions-enabled.masonry,
+.transitions-enabled.masonry .masonry-brick
+	-webkit-transition-duration 0.7s
+	-moz-transition-duration 0.7s
+	-o-transition-duration 0.7s
+	transition-duration 0.7s
+
+.transitions-enabled
+	&.masonry
+		-webkit-transition-property height, width
+		-moz-transition-property height, width
+		-o-transition-property height, width
+		transition-property height, width
+		.masonry-brick
+			-webkit-transition-property left, right, top
+			-moz-transition-property left, right, top
+			-o-transition-property left, right, top
+			transition-property left, right, top
+	&.infinite-scroll
+		&.masonry
+			-webkit-transition-property none
+			-moz-transition-property none
+			-o-transition-property none
+			transition-property none
+
+#infscr-loading
+	background #000
+	border-radius 10px
+	bottom 40px
+	color #FFF
+	left 45%
+	opacity 0.8
+	padding 10px
+	position fixed
+	text-align center
+	width 200px
+	z-index 100
