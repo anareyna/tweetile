@@ -19,7 +19,7 @@ var Tweetile = ( function() {
 	},
 	runFunction = function() {
 		initMasonry();
-		initEmbedly();
+		//initEmbedly();
 	};
 	toggleSubmenu = function() {
 		$(this).parent().find('.submenu').toggleClass('hide');
@@ -30,7 +30,7 @@ var Tweetile = ( function() {
 			itemSelector: '.tweet'
 		});
 	},
-	initEmbedly = function() {
+	initEmbedly2 = function() {
 		dom.tweetText.find('a').not('.username, .ht').embedly({
             maxWidth: 280,
             wmode: 'transparent',

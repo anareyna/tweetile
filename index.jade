@@ -5,12 +5,8 @@ html(lang='en')
 		title Tweetile
 		meta(name='description', content='A different way to display and experience your Twitter timeline!')
 		meta(name='author', content='Ana Reyna @anareyna')
-		
-		link(href='css/superslides.css', rel='stylesheet')
 		link(href='css/custom.css', rel='stylesheet')
-		
 		link(href='http://fonts.googleapis.com/css?family=PT+Sans:400,700', rel='stylesheet', type='text/css')
-
 		link(rel='shortcut icon', href='img/favicon.ico')
 	body
 		.navbar
@@ -21,14 +17,9 @@ html(lang='en')
 					span.icon-bar
 				a.brand(href='../')
 					img(src='img/logo-white.png')
-		//- .content
-		//- 	-for(var x=0; x<4;x++)
-		//- 		.box(style="margin:10px;float:left;width:400px;height:200px;background:red")
-		//- 		.box(style="margin:10px;float:left;width:400px;height:350px;background:green")
-		//- 		.box(style="margin:10px;float:left;width:400px;height:150px;background:yellow")
 				
 		.container
-			- for (var i=0; i<4; i++)
+			- for (var i=0; i<8; i++)
 				.tweet
 					.stream-item-header.row
 						span.time 3m
@@ -72,7 +63,7 @@ html(lang='en')
 					.stream-item-header.row
 						span.time 3m
 						a.account-group(href='#')
-							img.avatar(src='http://www.placekitten.com/100/100', alt='@AhoraYaLoSabes')
+							img.avatar(src='http://www.placekitten.com/80/80', alt='@AhoraYaLoSabes')
 							span.triangle
 							strong.fullname
 								a(href='http://twitter.com/AhoraYaLoSabes', title='@AhoraYaLoSabes') @AhoraYaLoSabes
@@ -80,6 +71,7 @@ html(lang='en')
 							span.username @AhoraYaLoSabes
 					p.tweet-text
 						| This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis 
+						a(href="javascript:;", target="_blank") http://www.google.com
 
 					.stream-item-footer.row
 						.tweet-actions
@@ -96,7 +88,8 @@ html(lang='en')
 							a.favourite(href="javascript:;", title="Favourite")
 								span
 								| Favourite
-							
+
+				
 			
 	
 		footer
