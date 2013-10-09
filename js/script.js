@@ -18,11 +18,26 @@ var Tweetile = ( function() {
 		dom.retweet.on('mouseenter', toggleSubmenu);
 	},
 	runFunction = function() {
-		initMasonry();
-		//initEmbedly();
+		initEmbedlyMasonry();
+		/*initMasonry();
+		initEmbedly();*/
 	};
 	toggleSubmenu = function() {
 		$(this).parent().find('.submenu').toggleClass('hide');
+	},
+
+	initEmbedlyMasonry = function() {
+		dom.tweetText.find('a').not('.username, .ht').embedly({
+            maxwidth : 280,
+            words : 30,
+            wmode: 'transparent',
+            method: 'afterParent',
+            key:'6e23d5a4685147d28f5b382dc110e276'
+         }).bind('displayed', function() {
+	         	dom.container.masonry({
+				itemSelector: '.tweet'
+			});
+         });
 	},
 	
 	initMasonry = function() {
@@ -30,9 +45,10 @@ var Tweetile = ( function() {
 			itemSelector: '.tweet'
 		});
 	},
-	initEmbedly2 = function() {
+	initEmbedly = function() {
 		dom.tweetText.find('a').not('.username, .ht').embedly({
-            maxWidth: 280,
+            maxwidth : 280,
+            words : 30,
             wmode: 'transparent',
             method: 'afterParent',
             key:'6e23d5a4685147d28f5b382dc110e276'

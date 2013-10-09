@@ -351,17 +351,18 @@
             this.style = this.imageStyle();
 
             var html;
+            // Ani added thumbcontainer class, changed provider position and added description link
             if (this.type === 'photo') {
-                html = "<a href='" + this.original_url + "' target='_blank'>";
-                html += "<img style='" + this.style + "' src='" + this.url + "' alt='" + this.title + "' /></a>";
+                html = "<div class='thumbcontainer' style='background:url(" + this.url + ") repeat-x center'><a href='" + this.original_url + "' target='_blank'>";
+                html += "<img style='" + this.style + "' src='" + this.url + "' alt='" + this.title + "' /></a></div>";
             } else if (this.type === 'video' || this.type === 'rich') {
-                html = this.html;
+                html = "<div class='thumbcontainer'>" + this.html + "</div>";
             } else {
                 this.title = this.title || this.url;
-                html = this.thumbnail_url ? "<img src='" + this.thumbnail_url + "' class='thumb' style='" + this.style + "'/>" : "";
-                html += "<a href='" + this.original_url + "'>" + this.title + "</a>";
-                html += this.provider_name ? "<a href='" + this.provider_url + "' class='provider'>" + this.provider_name + "</a>" : "";
-                html += this.description ? '<div class="description">' + this.description + '</div>' : '';
+                html = this.thumbnail_url ? "<div class='thumbcontainer' style='background:url(" + this.thumbnail_url + ") repeat-x center'><img src='" + this.thumbnail_url + "' class='thumb' style='" + this.style + "'/></div>" : "";
+                // html += "<a href='" + this.original_url + "'>" + this.title + "</a>";
+                //html += this.provider_name ? "<a href='" + this.provider_url + "' class='provider'>" + this.provider_name + "</a>" : "";
+                html += this.description ? '<div class="description"><span class="provider">' + this.provider_name + ' | </span>' + this.description + '&nbsp;<a target="_blank" href="'+ this.url +'">Read more →</a></div>' : '';
             }
 
             if (this.options.wrapElement) {
