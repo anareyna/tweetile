@@ -66,14 +66,14 @@ a:hover {
   background: #fff;
   border: 1px solid #dfdfdf;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  float: left;
+  /*float: left;*/
   font-size: 14px;
   line-height: 20px;
-  margin-left: 20px;
+  margin: 5px;
   width: 280px;
 }
 .tweet:first-child {
-  margin-left: 0;
+  /*margin-left: 0;*/
 }
 .tweet .stream-item-header {
   background: #f5f5f5;

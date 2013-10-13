@@ -20,13 +20,12 @@ var Tweetile = ( function() {
 	runFunction = function() {
 		initMasonry();
 		initEmbedly();
-	};
+	},
 	toggleSubmenu = function() {
 		$(this).parent().find('.submenu').toggleClass('hide');
 	},
-	
 	initMasonry = function() {
-		dom.container.masonry({
+		$('.container-tweets').masonry({
 			itemSelector: '.tweet'
 		});
 	},
@@ -46,4 +45,6 @@ var Tweetile = ( function() {
 		}
 	}
 })();
-Tweetile.init();
+$(function(){
+	Tweetile.init();
+});
