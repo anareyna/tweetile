@@ -1,216 +1,270 @@
-* {
-  box-sizing: -moz-border-box;
-  box-sizing: -webkit-border-box;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
+
 body {
-  background: #f8f8f8 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQALXLl/7zwjjgzhaulqMYAEYB8RmROaABAD/ew+Dsak1RQAAAABJRU5ErkJggg==");
-  color: #323232;
-  font: 14px 'Open Sans', sans-serif;
+  margin: 0;
   line-height: 18px;
-  margin: 60px 0 0;
+  color: #333333;
+  font: 12px  Arial, sans-serif;
+  background: #DCDCDC url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQALXLl/7zwjjgzhaulqMYAEYB8RmROaABAD/ew+Dsak1RQAAAABJRU5ErkJggg==) repeat;
+
+  /*
+  background: url(../img/bg.png);
+  */
 }
-a {
-  color: #08c;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  word-break: break-all;
-}
-a:hover {
-  color: #323232;
-  text-decoration: none;
-}
-.row {
-  *zoom: 1;
-}
-.row:before,
-.row:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.row:after {
+
+#main-container {
+  margin-top: 20px;  
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2px;
   clear: both;
+
 }
-.container {
-  width: 96%;
-  margin: 0 auto;
-  *zoom: 1;
-}
-.container:before,
-.container:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.container:after {
-  clear: both;
-}
-.navbar {
-  background: #333;
-  height: 45px;
-  position: fixed;
-  top: 0;
-  z-index: 10;
-  padding: 10px;
-  width: 100%;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1), 0 1px 0 0 rgba(0,0,0,0.1);
-  -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1), 0 1px 0 0 rgba(0,0,0,0.1);
-  -moz-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.1), 0 1px 0 0 rgba(0,0,0,0.1);
-}
-.hide {
-  display: none;
-}
-.tweet {
-  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  background: #fff;
-  border: 1px solid #dfdfdf;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  float: left;
+
+/****** Tweet item ****/
+
+.tweet-item {
   font-size: 14px;
-  line-height: 20px;
+  width: 280px;
   margin: 10px;
-  width: 280px;
-}
-.tweet .stream-item-header {
-  background: #f5f5f5;
-  position: relative;
-}
-.tweet .stream-item-header .avatar {
+  margin-bottom: 10px;
+  line-height: 20px;
   float: left;
-  width: 60px;
-  height: 60px;
-  margin-right: 10px;
+ 
+  background: #fff;
+   /*
+  border-top: #2FA9E0 3px solid;
+background: #F9F9F9;
+  -webkit-box-shadow: 0 8px 6px -6px #d4d4d4;
+     -moz-box-shadow: 0 8px 6px -6px #d4d4d4;
+          box-shadow: 0 8px 6px -6px #d4d4d4;
+          */
+
+border: 1px solid #DFDFDF;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.05);
+-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+
 }
-.tweet .stream-item-header .triangle {
-  background: url("../img/img-icon.png") 0 -58px;
-  width: 21px;
-  height: 10px;
-  position: absolute;
-  bottom: -5px;
-  left: 20px;
-}
-.tweet .stream-item-header .fullname {
-  float: left;
-  font-size: 16px;
-  overflow: hidden;
-  margin-top: 10px;
-  width: 160px;
-}
-.tweet .stream-item-header .username {
-  color: #323232;
-  display: block;
-  float: left;
-  font-size: 14px;
-}
-.tweet .stream-item-header .time {
-  color: #808080;
-  float: right;
-  font-size: 14px;
-  padding: 10px;
-}
-.tweet .tweet-text {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
+
+.tweet-item .stream-item-header {
   margin: 15px;
-}
-.tweet .embed {
-  color: #808080;
-  font-size: 11px;
-  line-height: 14px;
-  width: 280px;
-}
-.tweet .embed a {
-  font-size: 26px;
-  text-decoration: none;
-}
-.tweet .embed a:hover {
-  color: #808080;
-}
-.tweet .embed .description {
-  font-family: 'Arial', sans-serif;
-  margin: 10px 15px 15px;
-}
-.tweet .embed .description a {
-  font-size: 11px;
-}
-.tweet .embed .provider {
-  display: inline;
+  margin-bottom: 4px;
+  font-family: 'Open Sans', sans-serif;   
   font-weight: bold;
 }
-.tweet .embed .thumbcontainer {
-  background: #c4c5c1 url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQALXLl/7zwjjgzhaulqMYAEYB8RmROaABAD/ew+Dsak1RQAAAABJRU5ErkJggg==");
+.tweet-item .stream-item-header small.time {
+  float: right;
+  color: #999;
+  font-size: 12px;
 }
-.tweet .embed .thumbcontainer iframe {
-  height: 100%;
-  width: 100%;
-}
-.tweet .embed .thumbcontainer img {
+
+.tweet-item .stream-item-header span.username {
+  color: #999;
+  font-size: 14px;
   display: block;
-  margin: 0 auto;
-  overflow: hidden;
-  max-width: 280px;
+  padding-bottom: 5px;
+  margin-left: 57px;
+  border-bottom: 1px solid #e4e4e4;
 }
-.tweet .embed .highlight {
-  border-top: 1px solid #e4e4e4;
-  display: none;
-  margin: 15px;
-  padding-top: 10px;
+
+
+.tweet-item .stream-item-header a.account-group  {
+  color: #333;
+  text-decoration: none;
+  background: white;
+    -webkit-transition: background 1s;
 }
-.tweet .embed .thumb {
+
+.tweet-item .stream-item-header a.account-group:hover {
+  color: #03ACF1;
+  text-decoration: none;
+  background: blue;
+    -webkit-transition: background 1s;
+}
+
+.tweet-item .stream-item-header a:hover strong .fullname {
+  font-size: 16px;
+  color: #03ACF1;
+  text-decoration: underline;
+}
+
+
+.tweet-item .stream-item-header a.account-group img.avatar {
+  float: left;
+  margin-right: 10px;
+
+  border-radius: 50%;
+  /*
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+*/
+}
+
+.tweet-item div.stream-item-header a.username{
+  text-decoration: none;
+  color: #999;
+ 
+}
+.tweet-item p.tweet-text {
+  margin: 15px 15px 15px 15px;
+  font-family: 'Open Sans', sans-serif;   
+  font-size: 14px;
+  line-height: 1.5em;
   display: block;
-  margin: 0 auto;
-  overflow: hidden;
+
 }
-.tweet .stream-item-footer {
-  background: #f5f5f5;
+
+
+
+.tweet-item span.number {
+  display: none; /* desactivar para mostrar numeros */
+  color: #f8f8f8;
+  font-weight: bold;
+  font-size: 50px;
   position: relative;
+  right: 0px;
+  bottom: 10px;
+  float: right;
+ 
 }
-.tweet .stream-item-footer .tweet-actions {
-  position: relative;
+.tweet-item ul.tweet-actions {
+  font-size: 12px;
+  padding: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  float: left;
 }
-.tweet .stream-item-footer .tweet-actions .submenu {
-/*display none*/
-  left: 95px;
-  position: absolute;
-  top: -62px;
-  width: 250px;
-  border: 1px solid #f5f5f5;
+
+.tweet-item ul.tweet-actions li {
+  text-decoration: none;
+  display: inline;
+  color: #999;
+  margin-right: 10px;
 }
-.tweet .stream-item-footer .tweet-actions .submenu a {
-  display: block;
-  background: #f5f5f5;
+
+
+.tweet-item img.image-preview {
+  border: none;
+  padding-bottom: 10px;
 }
-.tweet .stream-item-footer .tweet-actions a {
-  color: #808080;
-  display: inline-block;
-  font-size: 11px;
+
+
+/**** Transitions ****/
+
+.transitions-enabled.masonry,
+.transitions-enabled.masonry .masonry-brick {
+  -webkit-transition-duration: 0.7s;
+     -moz-transition-duration: 0.7s;
+       -o-transition-duration: 0.7s;
+          transition-duration: 0.7s;
+}
+
+.transitions-enabled.masonry {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.transitions-enabled.masonry  .masonry-brick {
+  -webkit-transition-property: left, right, top;
+     -moz-transition-property: left, right, top;
+       -o-transition-property: left, right, top;
+          transition-property: left, right, top;
+}
+
+
+/* disable transitions on container */
+.transitions-enabled.infinite-scroll.masonry {
+  -webkit-transition-property: none;
+     -moz-transition-property: none;
+       -o-transition-property: none;
+          transition-property: none;
+}
+
+
+
+/* Infinite Scroll loader */
+#infscr-loading { 
   text-align: center;
-  width: 32.8%;
-  padding: 5px 0;
+  z-index: 100;
+  position: fixed;
+  left: 45%;
+  bottom: 40px;
+  width: 200px;
+  padding: 10px;
+  background: #000; 
+  opacity: 0.8;
+  color: #FFF;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
 }
-.tweet .stream-item-footer .tweet-actions a span {
-  display: inline-block;
-  margin-right: 5px;
-}
-.tweet .stream-item-footer .tweet-actions a:hover {
-  color: #08c;
-  background: #e0e0e0;
-}
-.tweet .stream-item-footer .tweet-actions a.reply span {
-  background: url("../img/img-icon.png") 0 -20px no-repeat;
-  height: 12px;
-  width: 17px;
-}
-.tweet .stream-item-footer .tweet-actions a.retweet span {
-  background: url("../img/img-icon.png") 0 -33px no-repeat;
-  height: 11px;
-  width: 20px;
-}
-.tweet .stream-item-footer .tweet-actions a.favourite span {
-  background: url("../img/img-icon.png") 0 -44px no-repeat;
-  height: 14px;
-  width: 14px;
-}
+
+/* embedly styles **/
+     
+     
+
+      div.embed {
+        font-family: Tahoma;
+        font-size: 11px;
+       /* background: #f7f7f7;
+        border: #e2e2e2 1px solid;
+        cursor: pointer;*/
+        color: grey;
+        width: 280px;
+        line-height: 1.28;
+        margin-top: 10px;
+      }
+
+      div.embed a{
+          font-family: 'Oswald', sans-serif;    
+          font-size: 26px;
+          color: #000000;       
+          text-decoration: none;
+        
+      }
+
+      div.embed a:hover{
+        color: #808080;
+
+      }
+
+      div.embed div.description span.provider{
+        display: inline;
+        font-weight: bold;
+      }
+
+      div.embed div.description {
+        /*border-top: 1px solid #e4e4e4;*/
+        margin: 15px;       
+      }
+
+      div.embed p.highlight{
+        display: none;
+        border-top: 1px solid #e4e4e4;
+        margin: 15px;
+        padding-top: 10px;
+      }
+
+      div.embed img {
+        margin: 0 auto;
+        display: block;
+        overflow: hidden;
+      }
+
+      div.embed img.thumb{
+        display: block;
+        margin: 0 auto;
+        overflow: hidden;
+    
+      }
+
+      div.embed div.thumbcontainer {
+        
+        background: #C4C5C1 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQALXLl/7zwjjgzhaulqMYAEYB8RmROaABAD/ew+Dsak1RQAAAABJRU5ErkJggg==) repeat;
+      }
+
+
